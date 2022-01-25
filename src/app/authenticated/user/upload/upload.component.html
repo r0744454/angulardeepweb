@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col col-12 col-md-6 d-flex flex-column">
+        <h2 class="align-self-center">Analyse an image...</h2>
+        <img *ngIf="imgSource" src="{{imgSource}}" alt="">
+        <form (ngSubmit)="onSubmit()" #uploadForm="ngForm">
+            <div class="form-group">
+                <label for="mailInput">Take a photo or select an image</label>
+                <input type="file" accept="image/*" capture="user" name="imageInput" class="form-control" id="imageInput" (change)="onRefreshFile($event)" required>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-vito-green" [disabled]="!uploadForm.form.valid || isSubmitted">analyze</button>
+            </div>
+            <div class="bg-danger" *ngIf="submitError">
+                <p>Please select a valid image</p>
+            </div>
+        </form>
+    </div>
+</div>

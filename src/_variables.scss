@@ -1,0 +1,162 @@
+@use "sass:map";
+
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+
+$vito-green: #81bb26;
+$vito-dark: #323031;
+
+$theme-colors: (
+    "vito-green": $vito-green,
+    "vito-dark": $vito-dark
+);
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('assets/fonts/Proxima\ Nova/ProximaNova-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'vicons';
+    src: url('assets/fonts/vicons.woff');
+}
+
+$agri-insurance: "\E001";
+$agri-precision: "\E002";
+$agriculture: "\E003";
+$algo-dev: "\E004";
+$app-dev: "\E005";
+$binary: "\E00A";
+$budget: "\E00B";
+$chip: "\E00C";
+$climate: "\E00D";
+$clock: "\E00E";
+$close: "\E00F";
+$dots-v: "\E011";
+$download: "\E012";
+$error: "\E013";
+$fullscreen: "\E014";
+$geomatics: "\E015";
+$globe: "\E016";
+$helpdesk: "\E018";
+$hyper-reliable: "\E019";
+$hyper-sensors: "\E01A";
+$hyper-spectral: "\E01B";
+$hyper-techspecs: "\E01C";
+$image-processing: "\E01D";
+$image-quality: "\E01E";
+$image-validation: "\E01F";
+$infra-watercoast: "\E023";
+$infrastructure: "\E024";
+$land-forestry: "\E025";
+$land-landcover: "\E026";
+$land-use: "\E027";
+$land-variables: "\E028";
+$part-of-vito: "\E02D";
+$partners: "\E02E";
+$process-algorithm: "\E031";
+$process-application: "\E032";
+$process-chain: "\E033";
+$process-hosting: "\E034";
+$route: "\E035";
+$sattelite: "\E036";
+$security: "\E039";
+$space-com: "\E03B";
+$space-conceptphase: "\E03C";
+$space-dataneeds: "\E03D";
+$space-mission: "\E03F";
+$team: "\E041";
+$vito: "\E049";
+$watercoast: "\E04B";
+$wc-decades: "\E04D";
+$wc-sound: "\E04F";
+
+$vicons: (
+    "insurance": $agri-insurance,
+    "precision-agriculture": $agri-precision,
+    "agriculture": $agriculture,
+    "algorithm-development": $algo-dev,
+    "app-develop": $app-dev,
+    "data": $binary,
+    "image-processing-1": $chip,
+    "geomatics": $geomatics,
+    "airborne-surveys": $globe,
+    "reliable-data": $hyper-reliable,
+    "camera-sensors": $hyper-sensors,
+    "hyperspectral": $hyper-spectral,
+    "technological-specifications": $hyper-techspecs,
+    "processing-services": $image-processing,
+    "image-quality": $image-quality,
+    "validation": $image-validation,
+    "road-water": $infra-watercoast,
+    "infrastructure": $infrastructure,
+    "forestry": $land-forestry,
+    "land-cover": $land-landcover,
+    "vegetation": $land-use,
+    "part-of-vito": $part-of-vito,
+    "partnership": $partners,
+    "process-algorithm": $process-algorithm,
+    "process-application": $process-application,
+    "image-processing-2": $process-chain,
+    "hosting": $process-hosting,
+    "end-to-end": $route,
+    "sattelite": $sattelite,
+    "security": $security,
+    "demonstration-commisioning": $space-com,
+    "concept-phase": $space-conceptphase,
+    "data-needs": $space-dataneeds,
+    "eo-missions": $space-mission,
+    "team": $team,
+    "vito": $vito,
+    "water-coast": $watercoast,
+    "path": $wc-decades,
+    "decision-making": $wc-sound,
+);
+
+@each $viconName, $viconValue in $vicons {
+    .vicon-#{$viconName}:before {
+        content: $viconValue;
+        font-family: 'vicons';
+        display: inline-block;
+        font-style: normal;
+    }
+}
+
+
+$vicon-sm: 1rem;
+$vicon-md: 1.5rem;
+$vicon-lg: 2rem;
+$vicon-xl: 2.5rem;
+$vicon-xxl: 3rem;
+
+$vicon-sizes: (
+    "sm": $vicon-sm,
+    "md": $vicon-md,
+    "lg": $vicon-lg,
+    "xl": $vicon-xl,
+    "xxl": $vicon-xxl,
+);
+
+@each $sizeName, $size in $vicon-sizes {
+    .vicon-#{$sizeName} {
+        color: $vito-green;
+        font-size: $size;
+    }
+}
+
+@each $sizeName, $size in $vicon-sizes {
+    .vicon-black-#{$sizeName} {
+        color: black;
+        font-size: $size;
+    }
+}
+
+@each $sizeName, $size in $vicon-sizes {
+    .vicon-inverted-#{$sizeName} {
+        background-color: black;
+        color: white;
+        font-size: $size;
+    }
+}
+
+$font-family-sans-serif: 'Proxima Nova','News Cycle', sans-serif;
